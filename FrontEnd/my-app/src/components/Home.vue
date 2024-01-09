@@ -294,21 +294,51 @@
       </v-row>
     </v-list>
   </v-navigation-drawer>
-  <div v-if="show">
-    <v-icon
-      style="left: 98%; display: flex; justify-content: end"
-      size="x-large"
-      @click="closeTodoItemsList"
-      >mdi-arrow-left-circle</v-icon
-    >
-    <TodoItems />
-  </div>
-  <div v-if="showDashBoard">
-    <v-icon style="left: 98%" size="x-large" @click="closeNoteList"
-      >mdi-arrow-left-circle</v-icon
-    >
-    <DashBoard />
-  </div>
+  <v-list class="v-list-menu">
+    <v-list v-if="show">
+      <v-icon
+        style="display: flex; justify-content: end"
+        size="x-large"
+        @click="closeTodoItemsList"
+        >mdi-arrow-left-circle</v-icon
+      >
+      <v-list-item class="custom-title-style">
+        <v-list-item-title
+          style="
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            font-size: x-large;
+          "
+          >{{ userStore.user[0].username }}</v-list-item-title
+        >
+        <v-divider></v-divider>
+      </v-list-item>
+      <TodoItems style="right: 10%" />
+      <v-divider></v-divider>
+    </v-list>
+    <v-list v-if="showDashBoard">
+      <v-icon size="x-large" @click="closeNoteList">mdi-arrow-left-circle</v-icon>
+
+      <v-list-item class="custom-title-style">
+        <v-list-item-title
+          style="
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            font-size: large;
+          "
+          >adasdsa</v-list-item-title
+        >
+        <v-divider></v-divider>
+      </v-list-item>
+
+      <DashBoard />
+
+      <v-divider></v-divider>
+    </v-list>
+  </v-list>
+
   <!-- <div v-if="showPrewiew">
     <v-icon size="x-large" @click="closePrewiew">mdi-arrow-left-circle</v-icon>
     <Prewiew />
@@ -574,6 +604,10 @@ export default {
 </script>
 
 <style scoped>
+.custom-title-style {
+  font-size: x-large;
+}
+
 .v-list {
   padding: 0;
 }

@@ -19,6 +19,8 @@
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
     "vue-sidebar-menu": "^5.2.12",
+    "vue-toasted": "^1.1.28",
+    "vuejs-noty": "^0.1.4",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {

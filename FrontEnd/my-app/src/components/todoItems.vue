@@ -294,6 +294,7 @@ export default {
 <style scoped>
 .addTodoItems {
   margin-top: 10px;
+  justify-content: center;
 }
 
 .description-text {
@@ -316,7 +317,7 @@ export default {
 .todo-card {
   width: 800px;
   min-height: 100%;
-  left: 220px;
+  left: 165px;
   margin-top: 20px;
   border-radius: 10px;
   padding: 20px;

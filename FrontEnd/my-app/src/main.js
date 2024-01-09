@@ -21,9 +21,11 @@ import { useUserStore } from './store/app'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
+
 const app = createApp(App)
 app.use(VueSidebarMenu)
 registerPlugins(app)
+
 
 app.mixin({
   created() {
