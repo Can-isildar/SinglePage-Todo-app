@@ -16,26 +16,31 @@ const routes = [
     name: 'register',
     component: () => import('@/components/Register.vue')
   },
-  {
-    path: '/todos',
-    name: 'todos',
-    component: () => import('@/components/todo.vue')
-  },
+  // {
+  //   path: '/todos',
+  //   name: 'todos',
+  //   component: () => import('@/components/todo.vue')
+  // },
   {
     path: '/forgot',
     name: 'forgot',
     component: () => import('@/components/Forgot.vue')
   },
   {
-    path: '/todos/Items',
-    name: 'todoItems',
-    component: () => import('@/components/todoItems.vue')
+    path: '/prewiew',
+    name: 'prewiew',
+    component: () => import('@/components/prewiewNote.vue')
   },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: () => import('@/components/dashboard.vue')
-  },
+  // {
+  //   path: '/todos/Items',
+  //   name: 'todoItems',
+  //   component: () => import('@/components/todoItems.vue')
+  // },
+  // {
+  //   path: '/dashboard',
+  //   name: 'dashboard',
+  //   component: () => import('@/components/dashboard.vue')
+  // },
 
 
 ]

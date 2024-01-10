@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 export const useUserStore = defineStore("mainStore", {
   state: () => ({
     user: [],
+    note :"",
   }),
   mutations: {
     setUser(state, user) {

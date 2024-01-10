@@ -20,6 +20,7 @@
 
     <v-btn color="green" @click="saveContent()">Save</v-btn>
     <v-btn color="red-darken-2" @click="seeNote"> See Note </v-btn>
+    <v-btn color="primary" @click="seePrewiew"> See Prewiew </v-btn>
     <v-snackbar v-model="snackbar" multi-line>
       {{ readNote }}
 
@@ -31,10 +32,12 @@
 </template>
 
 <script setup>
+import { useUserStore } from "@/store/app";
 import Error from "@/components/Error.vue";
 import Editor from "@tinymce/tinymce-vue";
 import { ref } from "vue";
 import { addContent, getNoteById } from "@/services/api";
+import router from "@/router/index";
 const readNote = ref("");
 const error = ref(false);
 const noteContent = ref("");
@@ -70,5 +73,16 @@ function seeNote() {
   getNoteById(id).then((val) => {
     readNote.value = val.content;
   });
+}
+
+function seePrewiew() {
+  const userStore = useUserStore();
+  const Content = noteContent.value.replace(/&nbsp;/g, " ");
+  const trimContent = Content.trim();
+  const sliceContent = trimContent.slice(3, trimContent.length - 4).trim();
+  userStore.$patch((state) => {
+    state.note = sliceContent;
+  });
+  router.push("/prewiew");
 }
 </script>
